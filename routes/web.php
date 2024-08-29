@@ -16,6 +16,8 @@ Route::view('/Home', 'Home')->name('Home')->middleware('middleware');
 Route::view('/About', 'about')->name('About')->middleware(CommonMiddleware::class);
 Route::view('/Form', 'form')->name('Form');
 
+
+
 Route::get('/about', function () {
     return view('about');
 });
@@ -46,6 +48,12 @@ Route::prefix('users')->group(function () {
         Route::get('/{id}/edit','edit')->name('users.edit');
     });
 });
+
+// Route::middleware('common')->group(function () {
+//     Route::prefix('users')->group(function () {
+//         Route::post('/addUser', 'UserController@addUser')->name('addUser');
+//     });
+// });
 
 // controller grouping
 Route::controller(users::class)->group(function () {

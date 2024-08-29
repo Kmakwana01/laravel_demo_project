@@ -9,4 +9,15 @@ class Students extends Model
 {
     use HasFactory;
     protected $fillable = ['name', 'email', 'roll_no'];
+
+    function setNameAttribute($val){
+        $this->attributes['name'] = ucwords($val);
+    }
+    function setEmailAttribute($val){
+        $this->attributes['email'] = strtolower($val);
+    }
+
+    function getNameAttribute($val){
+        return ucwords($val);
+    }
 }
