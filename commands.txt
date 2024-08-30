@@ -1,0 +1,32 @@
+php artisan serve ( server start )
+php artisab make:view edit ( view create )
+php artisan make:view common.header  ( view create in folder ) 
+php artisan make:controller Users ( create Controller )
+php artisan make:model Access ( create model )
+php artisan model:show User ( show model detail on cmd )
+php artisan make:middleware UserMiddleware ( create middleware) 
+php artisan make:component message ( create components )
+php artisan config:clear 
+php artisan migrate ( database model changes migrate  )
+php artisan storage:link ( image save path join & create )
+php artisan vendor:publish --tag=laravel-pagination ( custom pagination create )
+php artisan lang:publish ( localation all files create )
+php artisan stub:publish( commnd to create templete change )
+php artisan make:migration create_school_table ( table create in database )
+php artisan make:migration add_name_to_school_table --table=school
+php artisan migrate
+php artisan migrate:rollback --step 2 ( if not declare step so remove last migration else step count ) 
+php artisan migrate:reset (  ) ( migrate to created all table remove from database )
+php artisan migrate:refresh  ( rollback all migraion & ReCreate ) 
+php artisan migrate:status
+php artisan migrate:fresh ( To drop all tables and then run all migrations again: )
+php artisan make:migration update_access_table --table=access(not use & update single migration )
+php artisan make:seeder ( randomly data create for developer )
+php artisan db:seed
+php artisan db:seed --class=MembersSeeder (  for a specific seeder: )
+php artisan down ( server stop )
+php artisan up ( server start )
+php artisan down --secret="payKun"( site down with secret Key )
+php artisan migrate --path=/database/migrations/2024_08_28_104819_create_member_table.php
+php artisan install:api
+php artisan make:controller student2 --resource ( crud function with create )
