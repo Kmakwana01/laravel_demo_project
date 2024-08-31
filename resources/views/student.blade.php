@@ -47,8 +47,13 @@
 
 
             @if (request()->has('message'))
-                <div class="alert alert-success p-1" role="alert">
+                {{-- <div class="alert alert-success p-1" role="alert">
                     <p class="m-1"> {{ request()->query('message') }}</p>
+                </div> --}}
+                <div class="alert alert-success alert-dismissible fade show p-2" role="alert">
+                    {{ request()->query('message') }}
+                    <button type="button" style="padding: .75rem 1rem;" class="btn-close" data-bs-dismiss="alert"
+                        aria-label="Close"></button>
                 </div>
             @endif
 
@@ -76,8 +81,13 @@
 <div class="container mt-4">
     <!-- Display the message if it exists -->
     @if (request()->has('message'))
-        <div class="alert alert-success" role="alert">
+        {{-- <div class="alert alert-success" role="alert">
             {{ request()->query('message') }}
+        </div> --}}
+        <div class="alert alert-success alert-dismissible fade show p-2" role="alert">
+            {{ request()->query('message') }}
+            <button type="button" style="padding: .75rem 1rem;" class="btn-close" data-bs-dismiss="alert"
+                aria-label="Close"></button>
         </div>
     @endif
 

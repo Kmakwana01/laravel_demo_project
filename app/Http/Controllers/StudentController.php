@@ -115,11 +115,11 @@ class StudentController extends Controller
     public function deleteMultiple(Request $req)
     {
         $studentIds = $req->input('student_ids');
+        $students = Students::paginate(3);
         if (!empty($studentIds)) {
             Students::whereIn('id', $studentIds)->delete();
-            return redirect()->back()->with('message', 'Selected students have been deleted.');
+            return to_route('Get_Student', ['students' => $students, 'message' => 'Selected Record Delete successfully']);
         }
-        $students = Students::paginate(3);
         // return redirect()->back()->with('message', 'No students selected for deletion.');
         return to_route('Get_Student', ['students' => $students, 'message' => 'Selected Record Delete successfully']);
     }
